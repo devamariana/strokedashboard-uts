@@ -1,0 +1,306 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8fafc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER (Tetap di atas saat scroll) */
+.header {
+    position: fixed; /* header tetap di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000; /* pastikan di atas elemen lain */
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.header h3 {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+/* Tambahkan jarak agar konten tidak tertutup header */
+body::before {
+    content: "";
+    display: block;
+    height: 140px; /* sesuaikan dengan tinggi header */
+}
+
+/* RINGKASAN */
+.summary {
+    text-align: center;
+    background: #ffffff;
+    width: 100%;
+    padding: 60px 0;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-radius: 0 0 25px 25px;
+}
+
+.summary h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    color: #2d3436;
+    font-weight: 600;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    padding: 0 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.summary-box {
+    background: white;
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.summary-box p {
+    font-size: 0.9rem;
+    color: #636e72;
+    margin-bottom: 8px;
+}
+
+.summary-box h3 {
+    color: #00b894;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+/* =========================================================
+   GRAFIK (DIBUAT SAMA DENGAN STATISTIK DESKRIPTIF)
+   ========================================================= */
+.chart-container {
+    margin: 40px auto;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.chart-container h2 {
+    font-size: 1.4rem;
+    color: #2d3436;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.chart-container h2::before {
+    content: "📈";
+    font-size: 1.3rem;
+}
+
+/* ========================
+   PERBAIKAN POSISI PIE CHART
+   ======================== */
+.chart-box {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    width: 100%;
+    max-width: 1000px;
+
+    /* Tambahan agar isi chart berada di tengah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Pusatkan PIE CHART / grafik iframe */
+.chart-box iframe {
+    display: block;
+    margin: 0 auto;
+    width: 80%;          /* ubah dari 100% ke 80% biar tampak proporsional */
+    max-width: 700px;    /* batas lebar agar tidak terlalu besar */
+    min-height: 450px;
+    border: none;
+}
+
+/* Styling Utama Footer */
+.main-footer {
+    background-color: #00b894; /* Warna latar belakang biru gelap */
+    color: #f0f8ff; /* Warna teks (hampir putih) */
+    padding: 40px 0 10px 0; /* Padding atas dan bawah untuk konten utama */
+    font-family: Arial, sans-serif; /* Ganti dengan font yang Anda gunakan */
+}
+
+.container {
+    max-width: 1200px; /* Lebar maksimum konten */
+    margin: 0 auto; /* Tengah konten */
+    padding: 0 20px; /* Padding samping */
+}
+
+/* Penataan 3 Kolom menggunakan Flexbox */
+.footer-content {
+    display: flex; /* Aktifkan Flexbox */
+    justify-content: space-between; /* Jarak antara kolom */
+    gap: 30px; /* Jarak antar kolom */
+    padding-bottom: 30px; /* Jarak antara konten atas dan copyright */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis pemisah tipis */
+}
+
+.footer-col {
+    flex: 1; /* Biarkan kolom mengambil ruang yang sama */
+    padding: 0 15px;
+}
+
+/* Styling Judul Kolom */
+.footer-col h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #ffffff; /* Warna judul kolom */
+    padding-bottom: 5px; /* Jarak bawah pada judul */
+    border-bottom: 2px solid #00b894; /* Garis biru di bawah judul */
+    display: inline-block; /* Agar garis bawah hanya sepanjang teks */
+}
+
+.footer-col .logo-text {
+    color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* Styling Daftar (Informasi Akademik & Tim Penyusun) */
+.footer-links {
+    list-style: none; /* Hilangkan bullet point */
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links li i {
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+    color: #00b894; /* Warna ikon (biru muda) */
+    font-size: 1.1em;
+}
+
+/* Styling Teks Properti (Kolom 1) */
+.footer-col p {
+    line-height: 1.6;
+    font-size: 0.9em;
+    opacity: 0.8; /* Sedikit lebih redup */
+}
+
+/* Styling Copyright (Bagian Bawah Footer) */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6); /* Warna teks copyright lebih redup */
+}
+
+/* Media Query untuk Responsif (Opsional tapi disarankan) */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Ubah kolom menjadi tumpukan di layar kecil */
+    }
+    .footer-col {
+        padding: 15px 0;
+    }
+}
+
+/* =========================================================
+   STATISTIK DESKRIPTIF DATASET
+   ========================================================= */
+.statistics {
+    margin: 40px auto;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px 30px;
+}
+
+.statistics h2 {
+    font-size: 1.4rem;
+    color: #2d3436;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.statistics h2::before {
+    content: "📊";
+    font-size: 1.3rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #333;
+}
+
+.table-container th,
+.table-container td {
+    padding: 10px 12px;
+    border: 1px solid #e5e5e5;
+}
+
+.table-container th {
+    background-color: #00b894;
+    color: white;
+    font-weight: 500;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container tr:hover {
+    background-color: #e8f9f3;
+    transition: 0.2s ease;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Data Stroke</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analisis Dataset Stroke</h1>
+        <p><b>Total Data:</b> {{ rows }} baris | <b>Atribut:</b> {{ cols }}</p>
+        <p><b>Persentase Pasien Stroke:</b> {{ rate }}%</p>
+
+        <a href="/dashboard" class="btn">Lihat Dashboard</a><br><br>
+        <a href="/download-clean" class="btn">Unduh Data Bersih</a>
+    </div>
+</body>
+</html>
